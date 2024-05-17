@@ -1,0 +1,60 @@
+.wrapper{
+    position: relative;
+    .input {
+        width: 19.6em;
+        height: 3em;
+        border-radius: 1em;
+        padding: 1em 2em;
+        color: #151D51B2 ;
+        font-family: inherit;
+        border: 1px solid transparent;
+        font-size: 1.6em;
+        padding: 0;
+        padding-block: 0;
+        padding-inline: 1em;
+        margin: 0;
+        outline: none;
+        font-family: inherit;
+        &::placeholder {
+            font-size: 1em ;
+            color: inherit ;
+            font-family: inherit;
+        }
+        &:focus {
+            border: 1px solid #151D51;
+        }
+    }
+    .success {
+        color: var(--green);
+        border-color: var(--green);
+        &:focus {
+            border-color: var(--green);
+        }
+    }
+    .error {
+        color: var(--red);
+        border-color: var(--red);
+        &:focus {
+            border-color: var(--red);
+        }
+    }
+    .inputFeedback {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4em;
+        padding-left: 2em;
+        width: 100%;
+        margin-top: 1.5em;
+        span {
+            color: var(--primary-color);
+            font-size: 1.6em;
+        }
+    }
+
+    .toggler {
+        right: 1em;
+        top: 1.3em;
+        position: absolute;
+        cursor: pointer;
+    }
+}

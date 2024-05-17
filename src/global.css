@@ -1,0 +1,88 @@
+@font-face {
+    font-family: MainFont;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: MainFont;
+    font-weight: 500;
+    font-display: swap;
+    src: url('./assets/fonts/Roboto-Medium.ttf');
+}  
+@font-face {
+    font-family: MainFont;
+    font-weight: 700;
+    font-display: swap;
+    src: url('./assets/fonts/Roboto-Bold.ttf');
+}    
+@font-face {
+    font-family: MainFont;
+    font-weight: 300;
+    font-display: swap;
+    src: url('./assets/fonts/Roboto-Light.ttf');
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: MainFont;
+    font-weight: 400;
+}
+    
+body {
+    font-family: MainFont;
+    font-weight: 400;
+    color: var(--color-black);
+    background-color: var(--color-background);
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+    
+#root {
+    --primary-color: #4A4E71;
+    --text-color: #6F91BC;
+    --green: #27B274;
+    --red: #FF8080;
+
+    font-family: MainFont;
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    >div {
+        width: 100%;
+        background: linear-gradient(167.96deg, #F4F9FF 0%, #E0EDFB 100%);
+    }
+}
+    
+button {
+    background-color: transparent;
+    border-width: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    padding: 0;
+}
+
+@media screen and (max-width: 420px) {
+    #root {
+        font-size: 8px;
+    }
+}
+@media screen and (max-width: 320px) {
+    #root {
+        font-size: 6px;
+    }
+}
+@media screen and (max-width: 220px) {
+    #root {
+        font-size: 4px;
+    }
+}
