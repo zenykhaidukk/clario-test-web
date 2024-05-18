@@ -1,4 +1,4 @@
-import Signup from "./components/Signup";
+import Signup from "./pages/Signup";
 import "./global.css";
 
 function App() {

@@ -6,6 +6,7 @@ interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   validation?: {
     label: string;
     condition: boolean;
+    id: number;
   }[];
   showMessages?: boolean;
   submitted: boolean;
@@ -20,14 +21,16 @@ const InputField: FC<IProps> = ({ type, validation, showMessages, submitted, ...
 
   return (
     <div className={styles.wrapper}>
-      <input
-        {...props}
-        type={inputType}
-        className={`${styles.input} ${
-          validation?.every((el) => el.condition) && submitted ? styles.success : submitted ? styles.error : ""
-        }`}
-      />
-      {type === "password" && <img className={styles.toggler} src={eye} onClick={togglePasswordVisibility} />}
+      <div>
+        <input
+          {...props}
+          type={inputType}
+          className={`${styles.input} ${
+            validation?.every((el) => el.condition) && submitted ? styles.success : submitted ? styles.error : ""
+          }`}
+        />
+        {type === "password" && <img className={styles.toggler} src={eye} onClick={togglePasswordVisibility} />}
+      </div>
       {showMessages && (
         <div
           style={{ display: validation?.every((el) => el.label) ? "flex" : "none" }}
@@ -36,7 +39,9 @@ const InputField: FC<IProps> = ({ type, validation, showMessages, submitted, ...
           {validation?.map(
             (el) =>
               el.label && (
-                <span style={{ color: el.condition ? "var(--green)" : submitted ? "var(--red)" : "" }}>{el.label}</span>
+                <span key={el.id} style={{ color: el.condition ? "var(--green)" : submitted ? "var(--red)" : "" }}>
+                  {el.label}
+                </span>
               )
           )}
         </div>

@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import styles from "./styles.module.css";
-import InputField from "../InputField";
+import InputField from "../../components/InputField";
 
 type FormValues = { email: string; password: string };
 
@@ -13,15 +13,17 @@ const Signup: FC = () => {
       {
         label: /\S+@\S+\.\S+/.test(state.email) ? "" : "Field should a valid email",
         condition: /\S+@\S+\.\S+/.test(state.email),
+        id: 0,
       },
     ],
     password: [
-      { label: "8 characters or more", condition: state.password.length >= 8 },
+      { label: "8 characters or more", condition: state.password.length >= 8, id: 0 },
       {
         label: "Uppercase and lowercase letters",
         condition: /[A-Z]/.test(state.password) && /[a-z]/.test(state.password),
+        id: 1,
       },
-      { label: "At least one digit", condition: /\d/.test(state.password) },
+      { label: "At least one digit", condition: /\d/.test(state.password), id: 2 },
     ],
   };
 

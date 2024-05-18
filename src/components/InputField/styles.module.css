@@ -1,11 +1,14 @@
 .wrapper{
     position: relative;
+    > div {
+        position: relative;
+    }
     .input {
         width: 19.6em;
         height: 3em;
         border-radius: 1em;
         padding: 1em 2em;
-        color: #151D51B2 ;
+        color: var(--dark-blue-70) ;
         font-family: inherit;
         border: 1px solid transparent;
         font-size: 1.6em;
@@ -21,7 +24,7 @@
             font-family: inherit;
         }
         &:focus {
-            border: 1px solid #151D51;
+            border: 1px solid var(--dark-blue);
         }
     }
     .success {
@@ -53,7 +56,8 @@
 
     .toggler {
         right: 1em;
-        top: 1.3em;
+        top: 50%;
+        transform: translate(0, -50%);
         position: absolute;
         cursor: pointer;
     }
